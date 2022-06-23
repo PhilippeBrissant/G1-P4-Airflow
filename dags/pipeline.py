@@ -7,9 +7,8 @@ from airflow import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.bash import BashOperator
-
 with DAG(
-    'tutorial',
+    'JACARÉPAGUÁ',
     # These args will get passed on to each operator
     # You can override them on a per-task basis during operator initialization
     default_args={
@@ -36,7 +35,7 @@ with DAG(
     schedule_interval=timedelta(days=1),
     start_date=datetime(2022, 5, 25),
     catchup=False,
-    tags=['example'],
+    tags=['CACILDIS'],
 ) as dag:
 
     # t1, t2 and t3 are examples of tasks created by instantiating operators
@@ -64,8 +63,9 @@ with DAG(
 
     dag.doc_md = __doc__  # providing that you have a docstring at the beginning of the DAG
     dag.doc_md = """
-    This is a documentation placed anywhere
+    MY DOCUMENTATION
     """  # otherwise, type it like this
+    
     templated_command = dedent(
         """
     {% for i in range(5) %}
